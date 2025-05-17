@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbda6u8s21r4e"]
+
+[ext_resource type="Script" uid="uid://qktjq2fb2o3d" path="res://fase_02.gd" id="1_qu53l"]
+[ext_resource type="Texture2D" uid="uid://bi8g0p4j35dpm" path="res://telas/fase_2.png" id="2_qu53l"]
+
+[node name="fase_02" type="Node2D"]
+script = ExtResource("1_qu53l")
+
+[node name="tela" type="Sprite2D" parent="."]
+position = Vector2(512, 384)
+texture = ExtResource("2_qu53l")
+
+[node name="bt_game_over" type="Button" parent="."]
+offset_left = 776.0
+offset_top = 717.0
+offset_right = 1004.0
+offset_bottom = 749.0
+theme_override_font_sizes/font_size = 17
+text = "Ir para a tela de game over"
+
+[connection signal="pressed" from="bt_game_over" to="." method="_on_bt_game_over_pressed"]

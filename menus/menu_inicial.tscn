@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuspo60eovmhu"]
+
+[ext_resource type="Script" uid="uid://b3t6w4m0egkqx" path="res://menu_inicial.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://cgi8dxvrgjmug" path="res://telas/tela_inicial.png" id="2_3exob"]
+
+[node name="menu_inicial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lti8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(512, 384)
+texture = ExtResource("2_3exob")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 518.0
+offset_right = 593.0
+offset_bottom = 683.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="bt_jogar" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Jogar"
+
+[node name="bt_opcoes" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Opções"
+
+[node name="bt_sair" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sair"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/bt_jogar" to="." method="_on_bt_jogar_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/bt_opcoes" to="." method="_on_bt_opcoes_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/bt_sair" to="." method="_on_bt_sair_pressed"]

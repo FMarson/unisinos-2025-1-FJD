@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvmk86efxsulp"]
+
+[ext_resource type="Script" uid="uid://ckg0jfkvrk3rt" path="res://fase_01.gd" id="1_jbu07"]
+[ext_resource type="Texture2D" uid="uid://pa22rq2inbgf" path="res://telas/fase_1.png" id="2_3wmwu"]
+
+[node name="fase_01" type="Node2D"]
+script = ExtResource("1_jbu07")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(512, 384)
+texture = ExtResource("2_3wmwu")
+
+[node name="bt_fase_02" type="Button" parent="."]
+offset_left = 878.0
+offset_top = 717.0
+offset_right = 1008.0
+offset_bottom = 749.0
+theme_override_font_sizes/font_size = 17
+text = "Ir para a fase 2"
+
+[connection signal="pressed" from="bt_fase_02" to="." method="_on_bt_fase_02_pressed"]
