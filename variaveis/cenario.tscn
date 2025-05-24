@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfqsb76pa0yv0"]
+
+[ext_resource type="Texture2D" uid="uid://c1ykxjsr1vg7s" path="res://assets/images/sky.png" id="1_mqnm2"]
+[ext_resource type="Texture2D" uid="uid://b05jjxhcebw3" path="res://assets/images/sun.png" id="2_1tdcj"]
+[ext_resource type="Texture2D" uid="uid://x0wjkx7jlwxc" path="res://assets/images/cloud_01.png" id="3_wy1w7"]
+[ext_resource type="Texture2D" uid="uid://de3qe21kwwqyp" path="res://assets/images/cloud_02.png" id="4_d7kam"]
+[ext_resource type="Texture2D" uid="uid://clbcdgox5t77v" path="res://assets/images/cloud_03.png" id="5_j14hu"]
+[ext_resource type="Texture2D" uid="uid://gcutmotf6heq" path="res://assets/images/cloud_04.png" id="6_ecuka"]
+[ext_resource type="Texture2D" uid="uid://77bgafyd62yg" path="res://assets/images/cloud_05.png" id="7_mitsp"]
+[ext_resource type="Texture2D" uid="uid://xlcgb2wfh8yo" path="res://assets/images/cloud_06.png" id="8_g8jft"]
+[ext_resource type="PackedScene" uid="uid://bvm8bcf36j6gu" path="res://chao.tscn" id="9_5krud"]
+
+[node name="cenario" type="Node2D"]
+
+[node name="ceu" type="Sprite2D" parent="."]
+position = Vector2(320, 240)
+texture = ExtResource("1_mqnm2")
+
+[node name="sol" type="Sprite2D" parent="."]
+position = Vector2(313, 75)
+texture = ExtResource("2_1tdcj")
+
+[node name="nuvens" type="Node2D" parent="."]
+
+[node name="nuvem_01" type="Sprite2D" parent="nuvens"]
+position = Vector2(381, 58)
+texture = ExtResource("3_wy1w7")
+
+[node name="nuvem_02" type="Sprite2D" parent="nuvens"]
+position = Vector2(315, 176)
+texture = ExtResource("4_d7kam")
+
+[node name="nuvem_03" type="Sprite2D" parent="nuvens"]
+position = Vector2(551, 172)
+texture = ExtResource("5_j14hu")
+
+[node name="nuvem_04" type="Sprite2D" parent="nuvens"]
+position = Vector2(85, 158)
+texture = ExtResource("6_ecuka")
+
+[node name="nuvem_05" type="Sprite2D" parent="nuvens"]
+position = Vector2(147, 46)
+texture = ExtResource("7_mitsp")
+
+[node name="nuvem_06" type="Sprite2D" parent="nuvens"]
+position = Vector2(551, 57)
+texture = ExtResource("8_g8jft")
+
+[node name="chao" parent="." instance=ExtResource("9_5krud")]
+position = Vector2(348, 543)

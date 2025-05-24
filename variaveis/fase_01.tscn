@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b625n735r75i7"]
+
+[ext_resource type="PackedScene" uid="uid://bfqsb76pa0yv0" path="res://cenario.tscn" id="1_axix2"]
+
+[node name="fase_01" type="Node2D"]
+
+[node name="cenario" parent="." instance=ExtResource("1_axix2")]
