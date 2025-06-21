@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsh43jfarvw54"]
+
+[ext_resource type="Script" uid="uid://clova4yluhieo" path="res://menu_opcoes.gd" id="1_n1wtk"]
+
+[node name="menu_opcoes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n1wtk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="bt_musica" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Música        "
+
+[node name="bt_tela_cheia" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tela cheia        "
+
+[node name="bt_voltar" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Voltar"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/bt_voltar" to="." method="_on_bt_voltar_pressed"]

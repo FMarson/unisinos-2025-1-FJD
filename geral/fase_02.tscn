@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbda6u8s21r4e"]
+
+[ext_resource type="Script" uid="uid://qktjq2fb2o3d" path="res://fase_02.gd" id="1_qu53l"]
+
+[node name="fase_02" type="Node2D"]
+script = ExtResource("1_qu53l")

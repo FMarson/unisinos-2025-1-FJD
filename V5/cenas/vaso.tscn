@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgahwhss6hsyp"]
+
+[ext_resource type="Texture2D" uid="uid://ddee10em044c3" path="res://assets/Itens/Key.png" id="1_kb7iu"]
+[ext_resource type="AudioStream" uid="uid://byu54vfa0e15i" path="res://assets/sons/vaso.ogg" id="2_o8e0x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgc57"]
+atlas = ExtResource("1_kb7iu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m0on"]
+atlas = ExtResource("1_kb7iu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpdvb"]
+atlas = ExtResource("1_kb7iu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71p0g"]
+atlas = ExtResource("1_kb7iu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ppr0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgc57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m0on")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpdvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71p0g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2q1o"]
+radius = 4.0
+height = 16.0
+
+[node name="vaso" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8ppr0")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_v2q1o")
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_o8e0x")

@@ -1,0 +1,107 @@
+[gd_scene load_steps=15 format=3 uid="uid://cvmk86efxsulp"]
+
+[ext_resource type="Script" uid="uid://ckg0jfkvrk3rt" path="res://fase_01.gd" id="1_jbu07"]
+[ext_resource type="Texture2D" uid="uid://dowerahhayker" path="res://assets/images/demo01_PixelSky_layer01.png" id="2_ajqja"]
+[ext_resource type="Texture2D" uid="uid://bhp6cx6g78ekx" path="res://assets/images/demo01_PixelSky_layer02.png" id="3_cs2tf"]
+[ext_resource type="Texture2D" uid="uid://jcgkf0gixafi" path="res://assets/images/demo01_PixelSky_layer03.png" id="4_bhug5"]
+[ext_resource type="PackedScene" uid="uid://bkirt7e6rm7h5" path="res://personagem.tscn" id="5_cs2tf"]
+[ext_resource type="Texture2D" uid="uid://cqgq3hbetirjn" path="res://assets/Backgrounds/Moutains03.png" id="5_lephe"]
+[ext_resource type="Texture2D" uid="uid://ox1l3ilfl6gf" path="res://assets/Backgrounds/Moutains02.png" id="6_yeb1h"]
+[ext_resource type="Texture2D" uid="uid://c8mfl8uli0636" path="res://assets/Backgrounds/Moutains01.png" id="7_d00eo"]
+[ext_resource type="Texture2D" uid="uid://keps6nfq7oh7" path="res://assets/images/chao.png" id="9_yeb1h"]
+[ext_resource type="PackedScene" uid="uid://b7e2e1sl0tjba" path="res://slime.tscn" id="10_wegpt"]
+[ext_resource type="Script" uid="uid://wydwuxoc0tuk" path="res://slime.gd" id="11_v6v6p"]
+[ext_resource type="Script" uid="uid://dlqvhgvibypo1" path="res://gerador.gd" id="12_v6v6p"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yeb1h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yeb1h"]
+size = Vector2(64, 26)
+
+[node name="fase_01" type="Node2D"]
+script = ExtResource("1_jbu07")
+
+[node name="cenario" type="Node2D" parent="."]
+
+[node name="background" type="Node2D" parent="cenario"]
+
+[node name="NuvensFundo" type="Parallax2D" parent="cenario/background"]
+repeat_size = Vector2(360, 0)
+autoscroll = Vector2(-0.5, 0)
+repeat_times = 3
+
+[node name="Demo01PixelSkyLayer01" type="Sprite2D" parent="cenario/background/NuvensFundo"]
+position = Vector2(300, 370)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_ajqja")
+
+[node name="MontanhasFundo" type="Parallax2D" parent="cenario/background"]
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Montanha3" type="Sprite2D" parent="cenario/background/MontanhasFundo"]
+position = Vector2(300, 370)
+texture = ExtResource("5_lephe")
+
+[node name="NuvensMeio" type="Parallax2D" parent="cenario/background"]
+repeat_size = Vector2(240, 0)
+autoscroll = Vector2(-1, 0)
+repeat_times = 3
+
+[node name="Demo01PixelSkyLayer02" type="Sprite2D" parent="cenario/background/NuvensMeio"]
+position = Vector2(300, 370)
+texture = ExtResource("3_cs2tf")
+
+[node name="MontanhasMeio" type="Parallax2D" parent="cenario/background"]
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Montanha2" type="Sprite2D" parent="cenario/background/MontanhasMeio"]
+position = Vector2(260.889, 348)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_yeb1h")
+
+[node name="NuvensFrente" type="Parallax2D" parent="cenario/background"]
+repeat_size = Vector2(240, 0)
+autoscroll = Vector2(-1.5, 0)
+repeat_times = 3
+
+[node name="Demo01PixelSkyLayer03" type="Sprite2D" parent="cenario/background/NuvensFrente"]
+position = Vector2(300, 370)
+texture = ExtResource("4_bhug5")
+
+[node name="MontanhasFrente" type="Parallax2D" parent="cenario/background"]
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Montanha1" type="Sprite2D" parent="cenario/background/MontanhasFrente"]
+position = Vector2(300, 370)
+texture = ExtResource("7_d00eo")
+
+[node name="ParallaxGround" type="Parallax2D" parent="."]
+repeat_size = Vector2(32, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxGround"]
+position = Vector2(318.296, 464.25)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_yeb1h")
+
+[node name="StaticBoady" type="StaticBody2D" parent="ParallaxGround"]
+position = Vector2(317, 465)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_yeb1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxGround/StaticBoady"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_yeb1h")
+
+[node name="Player" parent="." instance=ExtResource("5_cs2tf")]
+position = Vector2(322, 430)
+collision_mask = 2
+
+[node name="Slime" parent="." instance=ExtResource("10_wegpt")]
+script = ExtResource("11_v6v6p")
+
+[node name="Gerador" type="Node2D" parent="."]
+script = ExtResource("12_v6v6p")

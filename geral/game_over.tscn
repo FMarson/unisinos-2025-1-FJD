@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfp7f38ebqxla"]
+
+[ext_resource type="Texture2D" uid="uid://h7enpy14x11j" path="res://telas/game_over.png" id="1_y26ei"]
+[ext_resource type="Script" uid="uid://ofa3suggy7ut" path="res://game_over.gd" id="1_yxx3c"]
+
+[node name="game_over" type="Node2D"]
+script = ExtResource("1_yxx3c")
+
+[node name="tela" type="Sprite2D" parent="."]
+position = Vector2(512, 384)
+texture = ExtResource("1_y26ei")
+
+[node name="bt_menu_inicial" type="Button" parent="."]
+offset_left = 874.0
+offset_top = 717.0
+offset_right = 1004.0
+offset_bottom = 749.0
+theme_override_font_sizes/font_size = 17
+text = "Menu inicial"
+
+[connection signal="pressed" from="bt_menu_inicial" to="." method="_on_bt_menu_inicial_pressed"]
